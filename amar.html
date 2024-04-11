@@ -1,0 +1,25 @@
+<!-- about.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>About Us</h1>
+    <ul>
+        {% for member in team_members %}
+            <li>
+                <span class="student-info">{{ member.full_name }}</span> - <span>{{ member.student_id }}</span>
+                {% if member.email %}
+                    <span>({{ member.email }})</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
